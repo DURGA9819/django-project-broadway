@@ -28,7 +28,10 @@
               <a class="nav-link active" aria-current="page" href="{% url 'classroom' %}">ClassRoom</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Students</a>
+              <a class="nav-link" href="{% url 'student' %}">Students</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'classroom_qs' %}">ClassRoomQuerySet</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle"

@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+from .models import ClassRoom
+
 def home(request):
     return HttpResponse("""
 
@@ -36,3 +38,16 @@ def classroom(request):
         {"name": "five", "address":"SPT"},
     ]
     return render(request, template_name="myapp/classroom.html", context={"classroom_name": "one", "location":"ktm", "classrooms":classrooms})
+
+def student(request):
+    students = [
+    {"name": "Jon", "age": 21, "address": "KTM", "email": "jon@email.com"},
+    {"name": "Jane", "age": 22, "address": "PKR", "email": "jane@email.com"},
+    {"name": "Hary", "age": 23, "address": "BKT", "email": "hary@email.com"},
+    {"name": "Ken", "age": 34, "address": "LTP", "email": "ken@email.com"},
+]
+    return render(request, template_name="mapp/student.html", context= {"students":students})
+
+def classroom_qs(request):
+    classrooms=ClassRoom.objects.all()
+    return render(request, template_name="myapp/classroom_qs.html",context={"classrooms":classrooms})

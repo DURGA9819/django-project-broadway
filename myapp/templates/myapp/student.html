@@ -1,0 +1,31 @@
+{% comment %} {% extends 'myapp/temp_inherit_home.html' %}
+
+{% block content %}
+
+  <h1>This is Student</h1>
+  <br>
+
+
+    <table class="table table-striped">
+      <thead>
+      <tr>
+          <th scope="col">SN</th>
+          <th scope="col">StudentName</th>
+          <th scope="col">Address</th>
+          <th scope="col">Email</th>
+
+      </tr>
+      </thead>
+      <tbody>
+      {% for student in Students %}
+      <tr>
+          <th scope="row">{{ forloop.counter }}</th>
+          <td>{{ student.name }}</td>
+          <td>{{ student.address }}</td>
+          <td>{{ student.email }}</td>
+      </tr>
+      {% endfor %}
+      </tbody>
+  </table>
+
+{% endblock %} {% endcomment %}
